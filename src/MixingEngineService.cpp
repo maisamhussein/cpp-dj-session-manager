@@ -3,16 +3,11 @@
 #include <memory>
 
 
-/**
- * TODO: Implement MixingEngineService constructor
- */
 MixingEngineService::MixingEngineService()
     : decks{nullptr, nullptr} ,active_deck(0), auto_sync(false),bpm_tolerance(0)
 {std::cout << "[MixingEngineService] Initialized with 2 empty decks." << std::endl;}
 
-/**
- * TODO: Implement MixingEngineService destructor
- */
+
 MixingEngineService::~MixingEngineService()
  {
     std::cout << "[MixingEngineService] Cleaning up decks..." << std::endl;
@@ -26,14 +21,11 @@ MixingEngineService::~MixingEngineService()
 
 
 
-// נשים לב שיש destructor ו לכן צריך לממש rule of 3 
-
-
-
 /**
- * TODO: Implement loadTrackToDeck method
- * @param track: Reference to the track to be loaded
- * @return: Index of the deck where track was loaded, or -1 on failure
+ * Loads a track into an available deck.
+ *
+ * @param track Reference to the track to be loaded.
+ * @return Index of the deck where the track was loaded, or -1 on failure.
  */
 int MixingEngineService::loadTrackToDeck(const AudioTrack& track) {
     std::cout << "\n=== Loading Track to Deck ===" << std::endl;
@@ -81,12 +73,11 @@ void MixingEngineService::displayDeckStatus() const {
 }
 
 /**
- * TODO: Implement can_mix_tracks method
- * 
- * Check if two tracks can be mixed based on BPM difference.
- * 
- * @param track: Track to check for mixing compatibility
- * @return: true if BPM difference <= tolerance, false otherwise
+ * Checks whether two tracks can be mixed based on their BPM difference.
+ *
+ * @param track Track to check for mixing compatibility.
+ * @return true if the BPM difference is within the allowed tolerance,
+ *         false otherwise.
  */
 bool MixingEngineService::can_mix_tracks(const PointerWrapper<AudioTrack>& track) const {
     if (decks[active_deck] == nullptr) { return false;}
@@ -98,7 +89,6 @@ bool MixingEngineService::can_mix_tracks(const PointerWrapper<AudioTrack>& track
 }
 
 /**
- * TODO: Implement sync_bpm method
  * @param track: Track to synchronize with active deck
  */
 void MixingEngineService::sync_bpm(const PointerWrapper<AudioTrack>& track) const {

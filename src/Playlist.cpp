@@ -6,8 +6,7 @@ Playlist::Playlist(const std::string& name)
     : head(nullptr), playlist_name(name), track_count(0) {
     std::cout << "Created playlist: " << name << std::endl;
 }
-// TODO: Fix memory leaks!
-// Students must fix this in Phase 1
+
 Playlist::~Playlist() {
 
   #ifdef DEBUG
@@ -25,8 +24,7 @@ Playlist::~Playlist() {
     head = nullptr;
     track_count = 0;
 }
-
-// we have to do rule of 3 
+ 
 Playlist::Playlist(const Playlist& other)
 : head(nullptr),playlist_name(other.playlist_name),track_count(0)
 {

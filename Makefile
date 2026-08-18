@@ -109,9 +109,8 @@ help:
 	@echo "STUDENT WORKFLOW:"
 	@echo "  1. make debug        # Build with debug information"
 	@echo "  2. make test         # Run the program"
-	@echo "  3. Fix the TODOs in the code"
-	@echo "  4. make test-leaks   # Check with valgrind"
-	@echo "  5. Repeat until no leaks found!"
+	@echo "  3. make test-leaks   # Check with valgrind"
+	@echo "  4. Repeat until no leaks found!"
 
 examination:
 	@echo "This is a placeholder for examination-specific targets."

@@ -44,26 +44,18 @@ bool DJSession::load_playlist(const std::string& playlist_name)  {
 }
 
 /**
- * TODO: Implement load_track_to_controller method
- * 
- * REQUIREMENTS:
- * 1. Track Retrieval
- *    - Find track in library using track name
- *    - Handle case when track is not found
- *    - Update error stats if track not found
- * 
- * 2. Controller Loading
- *    - Delegate loading to controller_service
- *    - Pass track by reference to controller
- * 
- * 3. Return Values
- *    1: Cache HIT
- *    0: Cache MISS (or error)
- *   -1: Cache MISS with eviction
- * 
- * @param track_name: Name of track to load
- * @return: Cache operation result code
-
+ * Loads a track from the library into the controller.
+ *
+ * The method retrieves the requested track by name and delegates
+ * the loading operation to the controller service.
+ *
+ * Return values:
+ *  1  - Cache hit
+ *  0  - Cache miss or error
+ * -1  - Cache miss with eviction
+ *
+ * @param track_name Name of the track to load.
+ * @return Cache operation result code.
  */
 int DJSession::load_track_to_controller(const std::string& track_name) {
     AudioTrack* track = library_service.findTrack(track_name);
@@ -95,7 +87,6 @@ int DJSession::load_track_to_controller(const std::string& track_name) {
 
 
 /**
- * TODO: Implement load_track_to_mixer_deck method
  * 
  * @param track_title: Title of track to load to mixer
  * @return: Whether track was successfully loaded to a deck

@@ -30,7 +30,6 @@ AudioTrack::AudioTrack(const std::string& title, const std::vector<std::string>&
     #endif
 }
 
-// ========== TODO: STUDENTS IMPLEMENT RULE OF 5 ==========
 
 //destructor
 AudioTrack::~AudioTrack() {

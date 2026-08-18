@@ -15,9 +15,7 @@ AudioTrack* LRUCache::get(const std::string& track_id) {
     return slots[idx].access(++access_counter);
 }
 
-/**
- * TODO: Implement the put() method for LRUCache
- */
+
 bool LRUCache::put(PointerWrapper<AudioTrack> track) 
 {
     if (!track) {return false;  }
@@ -76,9 +74,7 @@ size_t LRUCache::findSlot(const std::string& track_id) const {
 
 }
 
-/**
- * TODO: Implement the findLRUSlot() method for LRUCache
- */
+
 size_t LRUCache::findLRUSlot() const 
 {
 size_t lruIndex = max_size;                       
