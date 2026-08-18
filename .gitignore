@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# C/C++ build files
+*.o
+*.out
+*.exe
+
+# Ignore generated files inside bin,
+# but keep the configuration file
+bin/*
+!bin/dj_config.txt
+
+# Logs
+*.log
+
+# Temporary files
+*~
+*.tmp
